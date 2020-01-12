@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: wendys-rennpferde
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:h2:~/sepmt
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+      console:
+        enabled: true
+server:
+  port: 8080
+
+custom:
+  db:
+    url: "jdbc:h2:~/sepmt"
+    user: "sa"
+    password: ""
+    driver: "org.h2.Driver"
+
+---
+# YOU MUST NOT CHANGE THE TEST PROFILE
+spring:
+  profiles: test
+custom:
+  db:
+    url: "jdbc:h2:mem:;INIT=RUNSCRIPT FROM 'classpath:sql/createSchema.sql'"

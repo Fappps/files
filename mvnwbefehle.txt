@@ -1,0 +1,1 @@
+mvnw exec:java -Dexec.mainClass="org.h2.tools.Server" -Dexec.args="-web -browser"
